@@ -11,7 +11,7 @@ runs:
 
 outputs:
   published:
-    description: "'true' when release is successfully published, 'false' when nothing is published"
+    description: 'true' when release is successfully published, 'false' when nothing is published
 
   last-release-git-head:
     description: The sha of the last commit being part of the last release
