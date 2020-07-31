@@ -28,6 +28,6 @@ jobs:
 
       # release
       - name: dogfood
-        uses: .
+        uses: '.'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
