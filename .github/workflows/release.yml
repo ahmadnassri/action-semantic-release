@@ -14,18 +14,30 @@ jobs:
       - uses: actions/setup-node@v2.1.1
 
       # run checks
-      - run: npm audit --audit-level=moderate
+      - run: npm audit --audit-level=critical
       - run: npx updated
 
   release:
+    needs: dependencies
+
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.1
 
-      # release
-      - name: dogfood
+      - id: release
+        name: dogfood
         uses: ./
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - if: ${{ steps.release.outputs.published }}
+        uses: docker/build-push-action@v1
+        with:
+          add_git_labels: true
+          username: ahmadnassri
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: registry.hub.docker.com
+          repository: ahmadnassri/action-semantic-release
+          tags: latest, ${{ steps.release.outputs.release-version }}
