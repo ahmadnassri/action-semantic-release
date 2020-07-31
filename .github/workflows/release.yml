@@ -66,4 +66,4 @@ jobs:
           password: ${{ secrets[matrix.docker.password] }}
           registry: ${{ matrix.docker.registry }}
           repository: ${{ matrix.docker.repository }}
-          tags: latest, v${{ needs.release.outputs.release-version-major }}, ${{ needs.release.outputs.version }}
+          tags: latest, v${{ needs.release.outputs.release-version-major }}, ${{ needs.release.outputs.release-version }}
