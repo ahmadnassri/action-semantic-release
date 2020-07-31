@@ -1,0 +1,10 @@
+name: Semantic Release
+description: Semantic Release with all the presets
+
+branding:
+  color: red
+  icon: package
+
+runs:
+  using: 'node12'
+  main: 'index.js'
