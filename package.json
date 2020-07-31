@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "actions-semantic-release",
+  "version": "0.0.0-semantically-released",
+  "description": "semantic-release with all the presets available",
+  "author": {
+    "name": "Ahmad Nassri",
+    "email": "ahmad@ahmadnassri.com",
+    "url": "https://ahmadnassri.com"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "conventional-changelog-angular": "^5.0.10",
+    "conventional-changelog-atom": "^2.0.7",
+    "conventional-changelog-codemirror": "^2.0.7",
+    "conventional-changelog-conventionalcommits": "^4.3.0",
+    "conventional-changelog-ember": "^2.0.8",
+    "conventional-changelog-eslint": "^3.0.8",
+    "conventional-changelog-express": "^2.0.5",
+    "conventional-changelog-jquery": "^3.0.6",
+    "conventional-changelog-jshint": "^2.0.7",
+    "semantic-release": "^17.1.1"
+  }
+}

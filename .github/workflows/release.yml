@@ -1,0 +1,33 @@
+name: release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.1
+
+      # run checks
+      - run: npm audit --audit-level=moderate
+      - run: npx updated
+
+  release:
+    needs: test
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.1
+
+      # release
+      - name: dogfood
+        uses: .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
