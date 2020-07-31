@@ -1,17 +1,6 @@
 const core = require('@actions/core')
 const release = require('semantic-release')
 
-// include all the presets to be compiled
-require('conventional-changelog-angular')
-require('conventional-changelog-atom')
-require('conventional-changelog-codemirror')
-require('conventional-changelog-conventionalcommits')
-require('conventional-changelog-ember')
-require('conventional-changelog-eslint')
-require('conventional-changelog-express')
-require('conventional-changelog-jquery')
-require('conventional-changelog-jshint')
-
 release()
   .then(result => {
     // exit early
