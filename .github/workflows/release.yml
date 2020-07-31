@@ -40,4 +40,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: registry.hub.docker.com
           repository: ahmadnassri/action-semantic-release
-          tags: latest, ${{ steps.release.outputs.release-version }}
+          tags: latest, v${{ steps.release.outputs.release-version-major }}, v${{ steps.release.outputs.release-version }}
