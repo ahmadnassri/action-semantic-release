@@ -18,8 +18,6 @@ jobs:
       - run: npx updated
 
   release:
-    needs: test
-
     runs-on: ubuntu-latest
 
     steps:
