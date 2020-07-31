@@ -18,11 +18,14 @@ release()
     core.setOutput('last-release-git-tag', lastRelease.gitTag)
     core.setOutput('last-release-channel', lastRelease.channel)
     core.setOutput('last-release-version', lastRelease.version)
-    core.setOutput('last-release-version-major', lastRelease.parsed.groups.major)
-    core.setOutput('last-release-version-minor', lastRelease.parsed.groups.minor)
-    core.setOutput('last-release-version-patch', lastRelease.parsed.groups.patch)
-    core.setOutput('last-release-version-prerelease', lastRelease.parsed.groups.prerelease)
-    core.setOutput('last-release-version-buildmetadata', lastRelease.parsed.groups.buildmetadata)
+
+    if (lastRelease.parsed) {
+      core.setOutput('last-release-version-major', lastRelease.parsed.groups.major)
+      core.setOutput('last-release-version-minor', lastRelease.parsed.groups.minor)
+      core.setOutput('last-release-version-patch', lastRelease.parsed.groups.patch)
+      core.setOutput('last-release-version-prerelease', lastRelease.parsed.groups.prerelease)
+      core.setOutput('last-release-version-buildmetadata', lastRelease.parsed.groups.buildmetadata)
+    }
 
     nextRelease.parsed = semver.exec(nextRelease.version)
 
