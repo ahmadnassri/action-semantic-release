@@ -1,4 +1,4 @@
-name: Semantic Release
+name: Conventional Semantic Release
 description: Semantic Release with all the presets
 
 branding:
@@ -7,4 +7,68 @@ branding:
 
 runs:
   using: docker
-  image: Dockerfile
+  image: docker://ahmadnassri/action-semantic-release:v1
+
+outputs:
+  published:
+    description: "'true' when release is successfully published, 'false' when nothing is published"
+
+  last-release-git-head:
+    description: The sha of the last commit being part of the last release
+
+  last-release-git-tag:
+    description: The Git tag associated with the last release
+
+  last-release-channel:
+    description: The distribution channel on which the last release was initially made available (`undefined` for the default distribution channel)
+
+  last-release-version:
+    description: The version of the last release
+
+  last-release-version-major:
+    description: last release version major component
+
+  last-release-version-minor:
+    description: last release version minor component
+
+  last-release-version-patch:
+    description: last release version patch component
+
+  last-release-version-prerelease:
+    description: last release version prerelease component
+
+  last-release-version-buildmetadata:
+    description: last release version buildmetadata component
+
+  release-type:
+    description: The semver type of the release (patch, minor or major)
+
+  release-git-head:
+    description: The sha of the last commit being part of the new release
+
+  release-git-tag:
+    description: The Git tag associated with the new release
+
+  release-version:
+    description: The version of the new release.
+
+  release-notes:
+    description: The release notes for the new release
+
+  release-channel:
+    description: The distribution channel on which the next release will be made available (`undefined` for the default distribution channel)
+
+  release-version-major:
+    description: last release version major component
+
+  release-version-minor:
+    description: last release version minor component
+
+  release-version-patch:
+    description: last release version patch component
+
+  release-version-prerelease:
+    description: last release version prerelease component
+
+  release-version-buildmetadata:
+    description: last release version buildmetadata component
