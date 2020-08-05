@@ -1,5 +1,22 @@
 # GitHub Action: Semantic Release
 
+[![license][license-img]][license-url]
+[![version][release-img]][release-url]
+[![super linter][super-linter-img]][super-linter-url]
+[![release][release-img]][release-url]
+
+[license-url]: LICENSE
+[license-img]: https://badgen.net/github/license/ahmadnassri/action-semantic-release
+
+[release-url]: https://github.com/ahmadnassri/action-semantic-release/releases
+[release-img]: https://badgen.net//github/release/ahmadnassri/action-semantic-release
+
+[super-linter-url]: https://github.com/ahmadnassri/action-semantic-release/actions?query=workflow%3Asuper-linter
+[super-linter-img]: https://github.com/ahmadnassri/action-semantic-release/workflows/super-linter/badge.svg
+
+[release-url]: https://github.com/ahmadnassri/action-semantic-release/actions?query=workflow%3Arelease
+[release-img]: https://github.com/ahmadnassri/action-semantic-release/workflows/release/badge.svg
+
 [`semantic-release`](https://semantic-release.gitbook.io/) as a GitHub Action, with **all** presets included.
 
 - works with environment variables as documented in [`semantic-release` docs](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication)
@@ -21,7 +38,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: semantic-release
-        uses: docker://ahmadnassri/action-semantic-release:v1
+        uses: ahmadnassri/action-semantic-release@v1
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
