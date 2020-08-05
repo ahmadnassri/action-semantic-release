@@ -171,4 +171,3 @@ last release version prerelease component
 > default: `N/A`
 
 last release version buildmetadata component
-

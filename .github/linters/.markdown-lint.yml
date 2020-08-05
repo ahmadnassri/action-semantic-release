@@ -108,8 +108,7 @@ MD034: true
 
 # Horizontal rule style
 MD035:
-  style: "---"
-
+  style: "----"
 
 # Emphasis used instead of a heading
 MD036:
