@@ -1,15 +1,15 @@
 # GitHub Action: Semantic Release
 
 [![license][license-img]][license-url]
-[![version][release-img]][release-url]
+[![version][version-img]][version-url]
 [![super linter][super-linter-img]][super-linter-url]
 [![release][release-img]][release-url]
 
 [license-url]: LICENSE
 [license-img]: https://badgen.net/github/license/ahmadnassri/action-semantic-release
 
-[release-url]: https://github.com/ahmadnassri/action-semantic-release/releases
-[release-img]: https://badgen.net//github/release/ahmadnassri/action-semantic-release
+[version-url]: https://github.com/ahmadnassri/action-semantic-release/releases
+[version-img]: https://badgen.net//github/release/ahmadnassri/action-semantic-release
 
 [super-linter-url]: https://github.com/ahmadnassri/action-semantic-release/actions?query=workflow%3Asuper-linter
 [super-linter-img]: https://github.com/ahmadnassri/action-semantic-release/workflows/super-linter/badge.svg
