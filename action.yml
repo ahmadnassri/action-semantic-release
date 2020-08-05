@@ -8,8 +8,6 @@ branding:
 runs:
   using: docker
   image: docker://ahmadnassri/action-semantic-release:v1
-  env:
-    GITHUB_TOKEN: ${{ github.token }}
 
 outputs:
   published:
