@@ -46,26 +46,129 @@ jobs:
 
 ### Outputs
 
-| output                               | example                                    | description                                                                                                                        |
-| ------------------------------------ | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `published`                          | `true`                                     | 'true' when release is successfully published, 'false' when nothing is published                                                   |
-| `last-release-git-head`              | `da39a3ee5e6b4b0d3255bfef95601890afd80709` | The sha of the last commit being part of the last release                                                                          |
-| `last-release-git-tag`               | `v1.0.0`                                   | The Git tag associated with the last release                                                                                       |
-| `last-release-channel`               | `next`                                     | The distribution channel on which the last release was initially made available (`undefined` for the default distribution channel) |
-| `last-release-version`               | `1.0.0`                                    | The version of the last release                                                                                                    |
-| `last-release-version-major`         | `1`                                        | last release version major component                                                                                               |
-| `last-release-version-minor`         | `0`                                        | last release version minor component                                                                                               |
-| `last-release-version-patch`         | `0`                                        | last release version patch component                                                                                               |
-| `last-release-version-prerelease`    | ` `                                        | last release version prerelease component                                                                                          |
-| `last-release-version-buildmetadata` | ` `                                        | last release version buildmetadata component                                                                                       |
-| `release-type`                       | ` `                                        | The semver type of the release (patch, minor or major)                                                                             |
-| `release-git-head`                   | `68eb2c4d778050b0701136ca129f837d7ed494d2` | The sha of the last commit being part of the new release                                                                           |
-| `release-git-tag`                    | `v1.1.0`                                   | The Git tag associated with the new release                                                                                        |
-| `release-version`                    | `1.1.0`                                    | The version of the new release.                                                                                                    |
-| `release-notes`                      | `...`                                      | The release notes for the new release                                                                                              |
-| `release-channel`                    | `next`                                     | The distribution channel on which the next release will be made available (`undefined` for the default distribution channel)       |
-| `release-version-major`              | `1`                                        | last release version major component                                                                                               |
-| `release-version-minor`              | `1`                                        | last release version minor component                                                                                               |
-| `release-version-patch`              | `0`                                        | last release version patch component                                                                                               |
-| `release-version-prerelease`         | ` `                                        | last release version prerelease component                                                                                          |
-| `release-version-buildmetadata`      | ` `                                        | last release version buildmetadata component                                                                                       |
+#### `published`
+
+> default: `true`
+
+`'true'` when release is successfully published, `'false'` when nothing is published
+
+#### `last-release-git-head`
+
+> default: `da39a3ee5e6b4b0d3255bfef95601890afd80709`
+
+The sha of the last commit being part of the last release
+
+#### `last-release-git-tag`
+
+> default: `v1.0.0`
+
+The Git tag associated with the last release
+
+#### `last-release-channel`
+
+> default: `next`
+
+The distribution channel on which the last release was initially made available (`undefined` for the default distribution channel)
+
+#### `last-release-version`
+
+> default: `1.0.0`
+
+The version of the last release
+
+#### `last-release-version-major`
+
+> default: `1`
+
+last release version major component
+
+#### `last-release-version-minor`
+
+> default: `0`
+
+last release version minor component
+
+#### `last-release-version-patch`
+
+> default: `0`
+
+last release version patch component
+
+#### `last-release-version-prerelease`
+
+> default: `-`
+
+last release version prerelease component
+
+#### `last-release-version-buildmetadata`
+
+> default: `-`
+
+last release version buildmetadata component
+
+#### `release-type`
+
+> default: `N/A`
+
+The semver type of the release (patch, minor or major)
+
+#### `release-git-head`
+
+> default: `68eb2c4d778050b0701136ca129f837d7ed494d2`
+
+The sha of the last commit being part of the new release
+
+#### `release-git-tag`
+
+> default: `v1.1.0`
+
+The Git tag associated with the new release
+
+#### `release-version`
+
+> default: `1.1.0`
+
+The version of the new release.
+
+#### `release-notes`
+
+> default: `...`
+
+The release notes for the new release
+
+#### `release-channel`
+
+> default: `next`
+
+The distribution channel on which the next release will be made available (`undefined` for the default distribution channel)
+
+#### `release-version-major`
+
+> default: `1`
+
+last release version major component
+
+#### `release-version-minor`
+
+> default: `1`
+
+last release version minor component
+
+#### `release-version-patch`
+
+> default: `0`
+
+last release version patch component
+
+#### `release-version-prerelease`
+
+> default: `N/A`
+
+last release version prerelease component
+
+#### `release-version-buildmetadata`
+
+> default: `N/A`
+
+last release version buildmetadata component
+
