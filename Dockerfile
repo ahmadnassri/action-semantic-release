@@ -10,9 +10,10 @@ RUN mkdir /action
 WORKDIR /action
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends git openssh-client ca-certificates \
+  && apt-get install -y --no-install-recommends git openssh-client ca-certificates ruby-full \
   && apt-get purge -y --auto-remove \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  && gem install bundler
 
 COPY package.json package-lock.json index.js /action/
 RUN npm ci --only=prod

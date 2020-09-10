@@ -22,6 +22,6 @@
     "conventional-changelog-jquery": "^3.0.6",
     "conventional-changelog-jshint": "^2.0.7",
     "semantic-release": "^17.1.1",
-    "semantic-release-rubygem-with-pkg-root": "^0.0.8"
+    "semantic-release-rubygem-with-pkg-root": "^0.0.12"
   }
 }
