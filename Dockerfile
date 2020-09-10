@@ -18,7 +18,4 @@ RUN apt-get update \
 COPY package.json package-lock.json index.js /action/
 RUN npm ci --only=prod
 
-RUN useradd -ms /bin/bash deploy
-USER deploy
-
 ENTRYPOINT ["node", "/action/index.js"]
