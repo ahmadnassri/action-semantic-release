@@ -11,7 +11,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.5",
+    "@actions/core": "^1.2.6",
     "conventional-changelog-angular": "^5.0.10",
     "conventional-changelog-atom": "^2.0.7",
     "conventional-changelog-codemirror": "^2.0.7",
