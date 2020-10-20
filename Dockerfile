@@ -15,7 +15,8 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && gem install bundler
 
-COPY package.json package-lock.json index.js /action/
+COPY action ./
+
 RUN npm ci --only=prod
 
 ENTRYPOINT ["node", "/action/index.js"]
