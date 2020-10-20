@@ -1,0 +1,8 @@
+version: 2.0
+
+id: action-semantic-release
+
+about:
+  title: "GitHub Action: Semantic Release"
+  description: semantic-release as a GitHub Action, with all presets included
+  repository: ahmadnassri/action-semantic-release

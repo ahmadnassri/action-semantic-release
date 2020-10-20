@@ -1,26 +1,11 @@
-# GitHub Action: Semantic Release
+[`semantic-release`](https://semantic-release.gitbook.io/) as a GitHub Action, with **all** presets included.
 
-semantic-release as a GitHub Action, with all presets included
-
-[![license][license-img]][license-url]
-[![release][release-img]][release-url]
-[![super linter][super-linter-img]][super-linter-url]
-[![test][test-img]][test-url]
-[![release][release-img]][release-url]
-
-[`semantic-release`](https://semantic-release.gitbook.io/) as a GitHub
-Action, with **all** presets included.
-
-  - works with environment variables as documented in
-    [`semantic-release`
-    docs](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication)
-  - customizable through [`semantic-release`
-    configuration](https://semantic-release.gitbook.io/semantic-release/usage/configuration)
-    options
+- works with environment variables as documented in [`semantic-release` docs](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication)
+- customizable through [`semantic-release` configuration](https://semantic-release.gitbook.io/semantic-release/usage/configuration) options
 
 ## Usage
 
-``` yaml
+```yaml
 on:
   push:
     branches: [ master ]
@@ -46,8 +31,7 @@ jobs:
 
 > default: `true`
 
-`'true'` when release is successfully published, `'false'` when nothing
-is published
+`'true'` when release is successfully published, `'false'` when nothing is published
 
 #### `last-release-git-head`
 
@@ -65,8 +49,7 @@ The Git tag associated with the last release
 
 > default: `next`
 
-The distribution channel on which the last release was initially made
-available (`undefined` for the default distribution channel)
+The distribution channel on which the last release was initially made available (`undefined` for the default distribution channel)
 
 #### `last-release-version`
 
@@ -138,8 +121,7 @@ The release notes for the new release
 
 > default: `next`
 
-The distribution channel on which the next release will be made
-available (`undefined` for the default distribution channel)
+The distribution channel on which the next release will be made available (`undefined` for the default distribution channel)
 
 #### `release-version-major`
 
@@ -170,22 +152,3 @@ last release version prerelease component
 > default: `N/A`
 
 last release version buildmetadata component
-
-----
-> Author: [Ahmad Nassri](https://www.ahmadnassri.com/) &bull;
-> Twitter: [@AhmadNassri](https://twitter.com/AhmadNassri)
-
-[license-url]: LICENSE
-[license-img]: https://badgen.net/github/license/ahmadnassri/action-semantic-release
-
-[release-url]: https://github.com/ahmadnassri/action-semantic-release/releases
-[release-img]: https://badgen.net/github/release/ahmadnassri/action-semantic-release
-
-[super-linter-url]: https://github.com/ahmadnassri/action-semantic-release/actions?query=workflow%3Asuper-linter
-[super-linter-img]: https://github.com/ahmadnassri/action-semantic-release/workflows/super-linter/badge.svg
-
-[test-url]: https://github.com/ahmadnassri/action-semantic-release/actions?query=workflow%3Atest
-[test-img]: https://github.com/ahmadnassri/action-semantic-release/workflows/test/badge.svg
-
-[release-url]: https://github.com/ahmadnassri/action-semantic-release/actions?query=workflow%3Arelease
-[release-img]: https://github.com/ahmadnassri/action-semantic-release/workflows/release/badge.svg
