@@ -4,7 +4,10 @@ LABEL com.github.actions.name="Conventional Semantic Release" \
       com.github.actions.description="Semantic Release with all the presets" \
       com.github.actions.icon="package" \
       com.github.actions.color="red" \
-      maintainer="Ahmad Nassri <ahmad@ahmadnassri.com>"
+      maintainer="Ahmad Nassri <ahmad@ahmadnassri.com>" \
+      org.opencontainers.image.url="https://github.com/ahmadnassri/action-semantic-release" \
+      org.opencontainers.image.source="https://github.com/ahmadnassri/action-semantic-release" \
+      org.opencontainers.image.documentation="https://github.com/ahmadnassri/action-semantic-release"
 
 RUN mkdir /action
 WORKDIR /action
