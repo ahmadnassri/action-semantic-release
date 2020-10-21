@@ -1,23 +1,14 @@
 name: release
 
 on:
-  push:
-    branches:
-      - master
+  workflow_run:
+    workflows: [ test ]
+    branches: [ master ]
+    types: [ completed ]
 
 jobs:
-  dependencies:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.1.2
-
-      # run checks
-      - run: npm audit --audit-level=critical
-
   release:
-    needs: dependencies
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     runs-on: ubuntu-latest
 
@@ -30,14 +21,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: release
-        name: dogfood
-        uses: ./
+        uses: ahmadnassri/action-semantic-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   alias:
     needs: release
+
     if: needs.release.outputs.published == 'true'
+
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -60,14 +52,16 @@ jobs:
 
   publish:
     needs: release
+
     if: needs.release.outputs.published == 'true'
+
     runs-on: ubuntu-latest
     strategy:
       matrix:
         docker:
           - name: docker hub
             registry: registry.hub.docker.com
-            password: DOCKER_PASSWORD
+            password: DOCKER_TOKEN
             repository: ${{ github.event.repository.full_name }}
 
           - name: github package registry
@@ -76,8 +70,7 @@ jobs:
             repository: ${{ github.event.repository.full_name }}/${{ github.event.repository.name }}
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: ${{ matrix.docker.name }}
         uses: docker/build-push-action@v1
