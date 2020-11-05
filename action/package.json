@@ -26,7 +26,7 @@
     "@semantic-release/gitlab": "^6.0.5",
     "@semantic-release/release-notes-generator": "^9.0.1",
     "conventional-changelog-angular": "^5.0.12",
-    "conventional-changelog-atom": "^2.0.7",
+    "conventional-changelog-atom": "^2.0.8",
     "conventional-changelog-codemirror": "^2.0.8",
     "conventional-changelog-conventionalcommits": "^4.4.0",
     "conventional-changelog-ember": "^2.0.9",
