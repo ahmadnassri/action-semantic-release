@@ -29,7 +29,7 @@
     "conventional-changelog-atom": "^2.0.7",
     "conventional-changelog-codemirror": "^2.0.8",
     "conventional-changelog-conventionalcommits": "^4.4.0",
-    "conventional-changelog-ember": "^2.0.8",
+    "conventional-changelog-ember": "^2.0.9",
     "conventional-changelog-eslint": "^3.0.8",
     "conventional-changelog-express": "^2.0.6",
     "conventional-changelog-jquery": "^3.0.6",
