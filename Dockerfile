@@ -13,7 +13,7 @@ RUN mkdir /action
 WORKDIR /action
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends git openssh-client ca-certificates ruby-full \
+  && apt-get install -y --no-install-recommends git openssh-client ca-certificates ruby-full gettext-base \
   && apt-get purge -y --auto-remove \
   && rm -rf /var/lib/apt/lists/* \
   && gem install bundler
