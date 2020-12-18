@@ -1,7 +1,7 @@
 [`semantic-release`](https://semantic-release.gitbook.io/) as a GitHub Action, with **all** presets included.
 
 - works with environment variables as documented in [`semantic-release` docs](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication)
-- customizable through [`semantic-release` configuration](https://semantic-release.gitbook.io/semantic-release/usage/configuration) options
+- customizable through [`semantic-release` configuration file](https://semantic-release.gitbook.io/semantic-release/usage/configuration#configuration-file)
 
 ## Usage
 
@@ -24,6 +24,14 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+### Inputs
+
+#### `extends` _(optional)_
+
+File path containing a shareable configuration
+
+> Works the same as the CLI's [`--extends`](https://semantic-release.gitbook.io/semantic-release/usage/configuration#extends) argument
 
 ### Outputs
 

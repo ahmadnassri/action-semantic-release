@@ -9,6 +9,11 @@ runs:
   using: docker
   image: docker://ghcr.io/ahmadnassri/action-semantic-release:v1
 
+inputs:
+  extends:
+    description: file path containing a shareable configuration
+    required: false
+
 outputs:
   published:
     description: "'true' when release is successfully published, 'false' when nothing is published"
