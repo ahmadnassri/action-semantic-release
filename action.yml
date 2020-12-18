@@ -10,8 +10,8 @@ runs:
   image: docker://ghcr.io/ahmadnassri/action-semantic-release:v1
 
 inputs:
-  extends:
-    description: file path containing a shareable configuration
+  config:
+    description: file path to configuration file
     required: false
 
 outputs:

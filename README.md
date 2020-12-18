@@ -37,11 +37,11 @@ jobs:
 
 ### Inputs
 
-#### `extends` *(optional)*
+#### `config` *(optional)*
 
-File path containing a shareable configuration
+File path to configuration file
 
-> Works the same as the CLI's [`--extends`](https://semantic-release.gitbook.io/semantic-release/usage/configuration#extends) argument
+> ***Note**: only use this if you're using a non-standard [configuration file name](https://semantic-release.gitbook.io/semantic-release/usage/configuration#configuration-file)*
 
 ### Outputs
 
