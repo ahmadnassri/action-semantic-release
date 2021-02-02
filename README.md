@@ -10,8 +10,8 @@ semantic-release as a GitHub Action, with all presets included
 
 [`semantic-release`](https://semantic-release.gitbook.io/) as a GitHub Action, with **all** presets included.
 
-  - works with environment variables as documented in [`semantic-release` docs](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication)
-  - customizable through [`semantic-release` configuration file](https://semantic-release.gitbook.io/semantic-release/usage/configuration#configuration-file)
+-   works with environment variables as documented in [`semantic-release` docs](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication)
+-   customizable through [`semantic-release` configuration file](https://semantic-release.gitbook.io/semantic-release/usage/configuration#configuration-file)
 
 ## Usage
 
