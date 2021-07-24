@@ -89,6 +89,7 @@ jobs:
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
+          platforms: linux/amd64,linux/arm64
           tags: |
             ${{ github.event.repository.full_name }}:latest
             ${{ github.event.repository.full_name }}:v${{ needs.release.outputs.release-version-major }}
