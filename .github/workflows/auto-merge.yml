@@ -1,15 +1,43 @@
-name: auto-merge
+---
+name: Auto Actions
 
-on: pull_request
+on: # yamllint disable-line rule:truthy
+  pull_request_target:
+    types: [labeled, unlabeled, synchronize, review_requested, opened, reopened]
 
 jobs:
-  auto-merge:
-    timeout-minutes: 5
-
+  auto-approve-github-actions:
     runs-on: ubuntu-latest
-
+    if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
     steps:
-      - uses: actions/checkout@v2
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
+    - uses: hmarr/auto-approve-action@v2.1.0
+      #if: github.event.label.name == 'github_actions'
+      if: >-
+        contains( github.event.pull_request.labels.*.name, 'github_actions')
+        ||
+        (
+          contains( github.event.pull_request.labels.*.name, 'dependencies')
+          &&
+          ! contains( github.event.pull_request.labels.*.name, 'core_pulp_modules')
+        )
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  auto-merge:
+    name: Enable automerge on jobs with relevant labels
+    runs-on: ubuntu-latest
+    steps:
+    - uses: alexwilson/enable-github-automerge-action@main
+      if: >-
+        contains( github.event.pull_request.labels.*.name, 'github_actions')
+        ||
+        contains( github.event.pull_request.labels.*.name, 'automerge')
+        ||
+        (
+          contains( github.event.pull_request.labels.*.name, 'dependencies')
+          &&
+          ! contains( github.event.pull_request.labels.*.name, 'core_pulp_modules')
+        )
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        merge-method: SQUASH
