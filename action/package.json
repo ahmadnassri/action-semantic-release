@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.4.0",
-    "@google/semantic-release-replace-plugin": "^1.0.2",
+    "@google/semantic-release-replace-plugin": "^1.1.0",
     "@semantic-release/apm": "^4.0.2",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
