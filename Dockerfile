@@ -1,4 +1,4 @@
-FROM node:14.15.0-slim
+FROM node:16.15.0-slim
 
 LABEL com.github.actions.name="Conventional Semantic Release" \
       com.github.actions.description="Semantic Release with all the presets" \
