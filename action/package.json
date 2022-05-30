@@ -23,7 +23,7 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.4",
-    "@semantic-release/gitlab": "^9.2.0",
+    "@semantic-release/gitlab": "^9.3.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "conventional-changelog-angular": "^5.0.12",
     "conventional-changelog-atom": "^2.0.8",
