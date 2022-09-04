@@ -3,37 +3,61 @@
   "name": "actions-semantic-release",
   "version": "0.0.0-semantically-released",
   "description": "semantic-release with all the presets available",
-  "author": {
-    "name": "Ahmad Nassri",
-    "email": "ahmad@ahmadnassri.com",
-    "url": "https://ahmadnassri.com"
+  "author": "Ahmad Nassri <email@ahmadnassri.com> (https://www.ahmadnassri.com)",
+  "homepage": "https://github.com/ahmadnassri/action-semantic-release",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmadnassri/action-semantic-release.git"
   },
-  "scripts": {
-    "test": "echo nothing to test && exit 0",
-    "test:ci": "echo nothing to test && exit 0"
+  "bugs": {
+    "url": "https://github.com/ahmadnassri/action-semantic-release/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/ahmadnassri"
+  },
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "action",
+    "commit",
+    "lint"
+  ],
+  "engines": {
+    "node": ">=18"
   },
   "main": "index.js",
-  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "tap test --no-coverage",
+    "test:watch": "tap test --watch",
+    "test:ci": "tap test --100",
+    "test:report": "opener coverage/lcov-report/index.html"
+  },
   "dependencies": {
-    "@actions/core": "^1.4.0",
-    "@google/semantic-release-replace-plugin": "^1.0.2",
+    "@actions/core": "^1.9.1",
+    "@google/semantic-release-replace-plugin": "^1.1.0",
     "@semantic-release/apm": "^4.0.2",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.4",
-    "@semantic-release/gitlab": "^9.2.0",
+    "@semantic-release/github": "^8.0.6",
+    "@semantic-release/gitlab": "^9.4.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "conventional-changelog-angular": "^5.0.12",
+    "conventional-changelog-angular": "^5.0.13",
     "conventional-changelog-atom": "^2.0.8",
     "conventional-changelog-codemirror": "^2.0.8",
-    "conventional-changelog-conventionalcommits": "^4.6.0",
+    "conventional-changelog-conventionalcommits": "^5.0.0",
     "conventional-changelog-ember": "^2.0.9",
     "conventional-changelog-eslint": "^3.0.9",
     "conventional-changelog-express": "^2.0.6",
     "conventional-changelog-jquery": "^3.0.11",
     "conventional-changelog-jshint": "^2.0.9",
-    "semantic-release": "^19.0.2"
+    "semantic-release": "^19.0.5"
+  },
+  "devDependencies": {
+    "sinon": "^14.0.0",
+    "tap": "^16.3.0"
   }
 }
