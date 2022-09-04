@@ -1,14 +1,12 @@
-FROM node:16.15.0-slim
+FROM node:18-slim
 
 LABEL com.github.actions.name="Conventional Semantic Release" \
       com.github.actions.description="Semantic Release with all the presets" \
       com.github.actions.icon="package" \
       com.github.actions.color="red" \
-      maintainer="Ahmad Nassri <ahmad@ahmadnassri.com>" \
-      org.opencontainers.image.url="https://github.com/ahmadnassri/action-semantic-release" \
-      org.opencontainers.image.source="https://github.com/ahmadnassri/action-semantic-release" \
-      org.opencontainers.image.documentation="https://github.com/ahmadnassri/action-semantic-release"
+      maintainer="Ahmad Nassri <ahmad@ahmadnassri.com>"
 
+# set working dir
 RUN mkdir /action
 WORKDIR /action
 
@@ -18,8 +16,15 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && gem install bundler
 
+# install packages
+COPY action/package* ./
+RUN npm ci --omit=dev --no-fund --no-audit
+
+# keyscan github.com
+RUN mkdir -p ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+# copy files
 COPY action ./
 
-RUN npm ci --only=prod
-
-ENTRYPOINT ["node", "/action/index.js"]
+# set entry point
+ENTRYPOINT ["node", "--no-warnings=ExperimentalWarnings", "/action/index.js"]
