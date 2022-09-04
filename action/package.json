@@ -20,8 +20,8 @@
   "keywords": [
     "github",
     "action",
-    "commit",
-    "lint"
+    "semantic-release",
+    "release"
   ],
   "engines": {
     "node": ">=18"
