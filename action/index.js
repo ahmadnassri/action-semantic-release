@@ -22,7 +22,7 @@ process.on('uncaughtException', errorHandler)
 // parse inputs
 const inputs = {
   config: core.getInput('config'),
-  dry: core.getBooleanInput(' dry'),
+  dry: core.getBooleanInput('dry'),
   debug: core.getBooleanInput('debug'),
   format: core.getInput('format'),
   branches: core.getInput('branches')
