@@ -1,0 +1,11 @@
+# -------------------------------------------------- #
+# Note: this file originates in template-action-node #
+# -------------------------------------------------- #
+
+ts: false
+jsx: false
+flow: false
+coverage: true
+browser: false
+color: true
+coverage-report: html
