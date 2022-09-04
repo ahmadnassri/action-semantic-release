@@ -10,6 +10,9 @@ LABEL com.github.actions.name="Conventional Semantic Release" \
 RUN mkdir /action
 WORKDIR /action
 
+# slience npm
+RUN npm config set update-notifier=false audit=false fund=false
+
 RUN apt-get update \
   && apt-get install -y --no-install-recommends git openssh-client ca-certificates ruby-full \
   && apt-get purge -y --auto-remove \
