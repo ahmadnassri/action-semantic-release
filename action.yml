@@ -10,9 +10,26 @@ runs:
   image: docker://ghcr.io/ahmadnassri/action-semantic-release:v2
 
 inputs:
-  config:
-    description: file path to configuration file
+  dry:
     required: false
+    default: 'false'
+    description: Execute in dry-run mode
+
+  debug:
+    required: false
+    default: 'false'
+    description: Output debugging information
+
+  format:
+    description: The Git tag format used by semantic-release to identify releases
+
+  branches:
+    required: false
+    description: The branches on which releases should happen
+
+  config:
+    required: false
+    description: file path to configuration file
 
 outputs:
   published:
