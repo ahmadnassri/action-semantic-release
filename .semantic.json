@@ -31,7 +31,7 @@
       }
     }],
     ["@semantic-release/exec", {
-      "prepareCmd": "sed -i 's/:${lastRelease.version}/:${nextRelease.version}/g' action.yml"
+      "prepareCmd": "sed -Ei 's/:[0-9,\\.]+/:${nextRelease.version}/g' action.yml"
     }],
     ["@semantic-release/git", {
       "assets": ["action.yml"],
