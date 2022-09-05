@@ -4,7 +4,6 @@ $about.description$
 
 [![license][license-img]][license-url]
 [![release][release-img]][release-url]
-[![semantic][semantic-img]][semantic-url]
 
 $body$
 
@@ -17,6 +16,3 @@ $body$
 
 [release-url]: https://github.com/$about.repository$/releases
 [release-img]: https://badgen.net/github/release/$about.repository$
-
-[semantic-url]: https://github.com/$about.repository$/actions?query=workflow%3Arelease
-[semantic-img]: https://badgen.net/badge/📦/semantically%20released/blue
