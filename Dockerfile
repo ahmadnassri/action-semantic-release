@@ -5,12 +5,9 @@ FROM alpine:3.16 AS base
 # hadolint ignore=DL3018
 RUN apk add --no-cache --update nodejs npm git openssh ca-certificates ruby-bundler
 
-# alpine has trust issues
-RUN git config --global --add safe.directory '*'
-
 WORKDIR /action
 
-ENTRYPOINT [ "node" ]
+ENTRYPOINT [ "/action/entrypoint.sh" ]
 
 # --- build stage --- #
 
@@ -37,5 +34,3 @@ COPY --from=build /action/node_modules ./node_modules
 
 # copy files
 COPY action ./
-
-CMD ["--no-warnings=ExperimentalWarnings", "/action/index.js"]
