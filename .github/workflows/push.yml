@@ -146,12 +146,13 @@ jobs:
     if: ${{ needs.release.outputs.published == 'true' }}
 
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        release: [ refs/tags/v${{ needs.release.outputs.version }} ]
+        release: [ "refs/tags/v${{ needs.release.outputs.version }}" ]
         alias: 
-          - refs/tags/v${{ needs.release.outputs.version-major }}
-          - refs/tags/v${{ needs.release.outputs.version-major }}.${{ needs.release.outputs.version-minor }}
+          - "refs/tags/v${{ needs.release.outputs.version-major }}"
+          - "refs/tags/v${{ needs.release.outputs.version-major }}.${{ needs.release.outputs.version-minor }}"
 
     steps:
       - uses: actions/github-script@v6
