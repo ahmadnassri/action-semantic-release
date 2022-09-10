@@ -158,7 +158,7 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            const { object: { sha } } = github.rest.git.getRef({ ...context.repo, ref: 'tags/${{ matrix.release }}' })
+            const { object: { sha } } = await github.rest.git.getRef({ ...context.repo, ref: 'tags/${{ matrix.release }}' })
             await github.rest.git.deleteRef({ ...context.repo, ref: 'tags/${{ matrix.alias }}' }).catch(() => {})
             await github.rest.git.createRef({ ...context.repo, ref: 'refs/tags/${{ matrix.alias }}', sha })
 
