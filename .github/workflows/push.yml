@@ -149,18 +149,18 @@ jobs:
 
     strategy:
       matrix:
-        release: [ "refs/tags/v${{ needs.release.outputs.version }}" ]
+        release: [ "v${{ needs.release.outputs.version }}" ]
         alias: 
-          - "refs/tags/v${{ needs.release.outputs.version-major }}"
-          - "refs/tags/v${{ needs.release.outputs.version-major }}.${{ needs.release.outputs.version-minor }}"
+          - "v${{ needs.release.outputs.version-major }}"
+          - "v${{ needs.release.outputs.version-major }}.${{ needs.release.outputs.version-minor }}"
 
     steps:
       - uses: actions/github-script@v6
         with:
           script: |
             const { data: { object: { sha } } } = github.rest.git.getRef({ ...context.repo, ref: '${{ matrix.release }}' })
-            await github.rest.git.deleteRef({ ...context.repo, ref: '${{ matrix.alias }}' }).catch(() => {})
-            await github.rest.git.createRef({ ...context.repo, ref: '${{ matrix.alias }}', sha })
+            await github.rest.git.deleteRef({ ...context.repo, ref: 'tags/${{ matrix.alias }}' }).catch(() => {})
+            await github.rest.git.createRef({ ...context.repo, ref: 'refs/tags/${{ matrix.alias }}', sha })
 
   template-sync:
     timeout-minutes: 5
