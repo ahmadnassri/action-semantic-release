@@ -27,7 +27,7 @@ jobs:
         uses: ahmadnassri/action-metadata@v2.1.1
 
       - id: image
-        run: echo "::set-output name=name::$(basename "${GITHUB_REPOSITORY/docker-//}")"
+        run: echo "name=$(basename "${GITHUB_REPOSITORY/docker-//}") >> $GITHUB_OUTPUT"
 
   commit-lint:
     timeout-minutes: 5
