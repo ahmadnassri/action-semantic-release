@@ -1,6 +1,6 @@
 # --- base stage --- #
 
-FROM alpine:3.16 AS base
+FROM alpine:3.17.0 AS base
 
 # hadolint ignore=DL3018
 RUN apk add --no-cache --update nodejs npm git openssh ca-certificates ruby-bundler
