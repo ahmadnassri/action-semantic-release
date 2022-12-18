@@ -15,6 +15,7 @@ FROM base AS build
 
 # slience npm
 # hadolint ignore=DL3059
+# checkov:skip=CKV_DOCKER_5:false positive
 RUN npm config set update-notifier=false audit=false fund=false
 
 # keyscan github.com
