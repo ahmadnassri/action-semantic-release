@@ -27,7 +27,7 @@ jobs:
         uses: ahmadnassri/action-metadata@v2.1.2
 
       - id: image
-        run: echo "name=$(basename "${GITHUB_REPOSITORY/docker-//}")" >> $GITHUB_OUTPUT
+        run: echo "name=$(basename "${GITHUB_REPOSITORY/docker-//}")" >> "$GITHUB_OUTPUT"
 
   commit-lint:
     timeout-minutes: 5
@@ -49,7 +49,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3.0.2
 
-      - uses: oxsecurity/megalinter/flavors/javascript@v6
+      - uses: oxsecurity/megalinter/flavors/javascript@v6.15.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
           MEGALINTER_CONFIG: .github/linters/.mega-linter.yml
@@ -102,7 +102,7 @@ jobs:
       - release
       - metadata
 
-    timeout-minutes: 10
+    timeout-minutes: 5
 
     if: ${{ needs.release.outputs.published == 'true' }}
 
@@ -128,7 +128,7 @@ jobs:
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ needs.metadata.outputs.image-name }}:latest
             ghcr.io/${{ github.repository_owner }}/${{ needs.metadata.outputs.image-name }}:${{ needs.release.outputs.version-major }}
