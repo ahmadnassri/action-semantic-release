@@ -7,7 +7,7 @@ branding:
 
 runs:
   using: docker
-  image: docker://ghcr.io/ahmadnassri/action-semantic-release:2.1.12
+  image: docker://ghcr.io/ahmadnassri/action-semantic-release:2.1.13
 
 inputs:
   dry:
