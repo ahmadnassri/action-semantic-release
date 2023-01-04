@@ -3,7 +3,7 @@
 FROM alpine:3.16 AS base
 
 # hadolint ignore=DL3018
-RUN apk add --no-cache --update nodejs npm git openssh ca-certificates ruby-bundler
+RUN apk add --no-cache --update nodejs npm git openssh ca-certificates ruby-bundler bash
 
 WORKDIR /action
 
