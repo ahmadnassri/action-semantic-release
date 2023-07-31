@@ -6,7 +6,7 @@ services:
   # ---- mega-linter ---- #
   lint:
     profiles: ["dev"]
-    image: oxsecurity/megalinter:v7.2.1
+    image: oxsecurity/megalinter-javascript:v6.20.1
     volumes:
       - ./:/tmp/lint
     environment:
@@ -22,34 +22,13 @@ services:
       - ./:/data
     command: --defaults=.pandoc.yml
 
-  # ---- action container ---- #
-  action:
-    profiles: ["action"]
-    build: .
-
-  action-test:
-    extends: action
-    profiles: ["action"]
-    volumes:
-      - ./test:/github/workspace/test
-      - .git:/github/workspace/.git
-    env_file:
-      - .env
-
-  # ---- main container ---- #
+  # ---- app ---- #
   app:
     profiles: ["app"]
-    image: node:20-alpine
-    working_dir: /app
-    entrypoint: npm --no-update-notifier --no-fund --no-audit
-    command: start
-    tty: true
+    privileged: true
+    build: .
+    working_dir: /github/workspace
     volumes:
-      - ./:/app
+      - ./:/github/workspace
     env_file:
       - .env
-
-  app-test:
-    extends: app
-    profiles: ["test"]
-    command: run test:ci -- --reporter=classic
