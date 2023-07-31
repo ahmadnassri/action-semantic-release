@@ -1,17 +1,26 @@
+# kics-scan disable=9bae49be-0aa3-4de5-bab2-4c3a069e40cd,67fd0c4a-68cf-46d7-8c41-bc9fba7e40ae
+
 # --- base stage --- #
 
-FROM alpine:3.17 AS base
+FROM alpine:3.18 AS base
 
 # hadolint ignore=DL3018
-RUN apk add --no-cache --update nodejs npm git openssh ca-certificates ruby-bundler bash
+RUN apk add --no-cache --update \
+  nodejs=18.17.0-r0 \
+  git=2.40.1-r0 \
+  openssh=9.3_p2-r0 \
+  ca-certificates=20230506-r0 \
+  ruby-bundler=2.4.15-r0 \
+  bash=5.2.15-r5
 
 WORKDIR /action
-
-ENTRYPOINT [ "/action/entrypoint.sh" ]
 
 # --- build stage --- #
 
 FROM base AS build
+
+# hadolint ignore=DL3018
+RUN apk add --no-cache npm=9.6.6-r0
 
 # slience npm
 # hadolint ignore=DL3059
@@ -22,7 +31,7 @@ RUN npm config set update-notifier=false audit=false fund=false
 RUN mkdir -p ~/.ssh && ssh-keyscan github.com >> /root/.ssh/known_hosts
 
 # install packages
-COPY action/package* ./
+COPY package* ./
 RUN npm ci --omit=dev --no-fund --no-audit
 
 # --- app stage --- #
@@ -34,4 +43,16 @@ COPY --from=build /root/.ssh/known_hosts /root/.ssh/known_hosts
 COPY --from=build /action/node_modules ./node_modules
 
 # copy files
-COPY action ./
+COPY package.json ./
+COPY src ./
+
+HEALTHCHECK NONE
+
+WORKDIR /github/workspace/
+
+RUN git config --global --add safe.directory /github/workspace/
+
+# hadolint ignore=DL3002
+USER root
+
+ENTRYPOINT [ "/action/entrypoint.sh" ]

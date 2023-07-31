@@ -1,8 +1,0 @@
-# -------------------------------------------------- #
-# Note: this file originates in template-action-node #
-# -------------------------------------------------- #
-
-*.log
-.nyc_output
-coverage
-node_modules
