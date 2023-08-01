@@ -33,11 +33,10 @@
     "test:cli": "node --experimental-test-coverage --test",
     "test": "npm run test:cli -- test",
     "test:watch": "npm run test:cli --watch",
-    "test:ci": "npm run test:cli --test-reporter spec --test-reporter-destination stdout --test-reporter node-test-github-reporter --test-reporter-destination stdout test"
+    "test:ci": "npm run test:cli -- --test-reporter spec --test-reporter-destination stdout --test-reporter node-test-github-reporter --test-reporter-destination stdout test"
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@google/semantic-release-replace-plugin": "^1.2.0",
     "@semantic-release/apm": "^4.0.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^10.0.1",
@@ -55,7 +54,8 @@
     "conventional-changelog-express": "^3.0.0",
     "conventional-changelog-jquery": "^4.0.0",
     "conventional-changelog-jshint": "^3.0.0",
-    "semantic-release": "^21.0.7"
+    "semantic-release": "^21.0.7",
+    "semantic-release-replace-plugin": "^1.2.7"
   },
   "devDependencies": {
     "node-test-github-reporter": "^1.1.3"
