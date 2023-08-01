@@ -57,8 +57,5 @@
     "conventional-changelog-jshint": "^3.0.0",
     "semantic-release": "^21.0.7"
   },
-  "devDependencies": {
-    "sinon": "^15.2.0",
-    "tap": "^16.3.8"
-  }
+  "devDependencies": {}
 }

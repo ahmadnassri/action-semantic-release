@@ -43,8 +43,7 @@ COPY --from=build /root/.ssh/known_hosts /root/.ssh/known_hosts
 COPY --from=build /action/node_modules ./node_modules
 
 # copy files
-COPY package.json ./
-COPY src ./
+COPY package.json src ./
 
 HEALTHCHECK NONE
 
