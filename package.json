@@ -33,7 +33,7 @@
     "test:cli": "node --experimental-test-coverage --test",
     "test": "npm run test:cli -- test",
     "test:watch": "npm run test:cli --watch",
-    "test:ci": "npm run test:cli -- --test-reporter spec --test-reporter-destination stdout --test-reporter node-test-github-reporter --test-reporter-destination stdout test"
+    "test:ci": "npm run test:cli -- --test-reporter node-test-github-reporter test"
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
