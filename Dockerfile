@@ -50,7 +50,4 @@ WORKDIR /github/workspace/
 
 RUN git config --global --add safe.directory /github/workspace/
 
-# hadolint ignore=DL3002
-USER root
-
 ENTRYPOINT [ "/action/entrypoint.sh" ]
