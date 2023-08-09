@@ -7,6 +7,7 @@ FROM alpine:3.18 AS base
 # hadolint ignore=DL3018
 RUN apk add --no-cache --update \
   nodejs=18.17.0-r0 \
+  npm=9.6.6-r0 \
   git=2.40.1-r0 \
   openssh=9.3_p2-r0 \
   ca-certificates=20230506-r0 \
@@ -18,9 +19,6 @@ WORKDIR /action
 # --- build stage --- #
 
 FROM base AS build
-
-# hadolint ignore=DL3018
-RUN apk add --no-cache npm=9.6.6-r0
 
 # slience npm
 # hadolint ignore=DL3059
