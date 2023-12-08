@@ -2,7 +2,7 @@
 
 # --- base stage --- #
 
-FROM alpine:3.18 AS base
+FROM alpine:3.19 AS base
 
 # hadolint ignore=DL3018
 RUN apk add --no-cache --update \
